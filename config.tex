@@ -1,0 +1,45 @@
+%%% Allgemein
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage[ngerman]{babel}
+\usepackage{blindtext}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{multicol}
+\usepackage{utopia}
+\usepackage[linktoc=true]{hyperref}
+
+% When using babel or polyglossia with biblatex, loading csquotes is recommended to ensure that quoted texts are typeset according to the rules of your main language.
+\usepackage{csquotes}
+
+% Set correct breaks of urls in the bibliography
+\setcounter{biburllcpenalty}{7000}
+\setcounter{biburlucpenalty}{8000}
+
+% Distanz zwischen der letztmöglichen Textzeile und des Seitennummer
+\setlength{\footskip}{23pt}
+
+% Einbinden externer PDF-Dokumente
+\usepackage{pdfpages}
+
+%%% Inhalt und Layout
+% Einstellen des Zeilenabstandes
+\linespread{1.25}
+
+% The emptypage package prevents page numbers and headings from appearing on empty pages.
+\usepackage{emptypage}
+
+% Optimierter Randausgleich
+\usepackage{microtype}
+
+%%% Verzeichnisse
+% Abkürzungen
+\usepackage{acronym}
+
+%%% Abbildungen
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{wrapfig}
+
+% Einstellen des fbox-Paddings
+\fboxsep0mm

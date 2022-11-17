@@ -1,0 +1,68 @@
+\documentclass[a4paper, hidelinks, dvipsnames, 11pt, listof=entryprefix, listof=nochaptergap]{scrreprt}
+\usepackage[a4paper, left=32mm, right=19mm, top=19mm, bottom=19mm]{geometry}
+\usepackage[utf8]{inputenc}
+
+\usepackage[backend=biber, language=ngerman, style=authoryear-comp]{biblatex}
+\addbibresource{references.bib}
+
+\input{config.tex}
+
+\begin{document}
+    \interfootnotelinepenalty=10000
+    \renewcommand{\bibname}{Literatur- und Quellenverzeichnis}
+    \renewcaptionname{ngerman}{\figurename}{Abb.}
+    \providecaptionname{ngerman}{\listoflofentryname}{Abb.}
+    \providecaptionname{ngerman}{\listoflotentryname}{Tab.}
+
+    % Titlepage
+    \include{scaffold/Titlepage/titlepage.tex}
+    \newpage
+
+    % Genderpassus
+    \include{scaffold/Sperrvermerk/sperrvermerk.tex}
+    \newpage
+
+    % Genderpassus
+    \include{scaffold/Genderpassus/genderpassus.tex}
+    \newpage
+
+    % Inhaltsverzeichnis
+    % Für einen Seitenumbruch im Inhaltsverzeichnis einfach vor die entsprechende \section ein   "\addtocontents{toc}{\protect\newpage}" stellen
+    %\renewcommand\contentsname{Inhaltsverzeichnis}
+    \tableofcontents
+    \newpage
+
+    % Abbildungsverzeichnis
+    % \listoffigures
+    % \newpage
+
+    % Tabellenverzeichnis
+    % \listoftables
+    % \newpage
+
+    % Abkürzungsverzeichnis
+    \begin{multicols}{2}
+    \include{acronyms.tex}
+    \end{multicols}
+    \newpage
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    % Content
+
+    % Hierachy:
+    % Chapter
+    %    Section
+    %       Subsection
+    %          Subsubsection
+
+    \chapter*{Abstract}
+    \addcontentsline{toc}{chapter}{Abstract}  
+    \input{content/Abstract.tex}
+
+    \input{content/Chapter1.tex}
+
+    \input{content/Chapter2.tex}
+
+    \include{scaffold/Eigenständigkeitserklärung/eigenständigkeitserklärung.tex}
+
+\end{document}
